@@ -1,8 +1,6 @@
 package uniandes.edu.co.epsandes.modelo;
 
 import jakarta.persistence.*;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 
 @Entity
 @Table(name = "IPSs")
@@ -17,15 +15,23 @@ public class IpsEntity {
     private String horario;
 
     public IpsEntity() {
-        ;
+        
     }
-
+    
+    
     public IpsEntity(String nombre, String direccion, String telefono, String horario) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.horario = horario;
     }
+    
+    
+    public IpsEntity(Integer nit) {
+        this.nit = nit;
+    }
+
+    
 
     public Integer getNit() {
         return nit;
@@ -74,3 +80,4 @@ public class IpsEntity {
                 ", horario=" + horario + "]";
     }
 }
+

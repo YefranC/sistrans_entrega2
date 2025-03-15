@@ -1,10 +1,6 @@
 package uniandes.edu.co.epsandes.modelo;
 
 import jakarta.persistence.*;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 
 @Entity
 @Table(name = "ExamenesDiagnosticos")
@@ -20,13 +16,23 @@ public class ExamenDiagnosticoEntity {
     @JoinColumn(name = "idOrden", nullable = false)
     private OrdenServicioEntity ordenServicio;
 
-    public ExamenDiagnostico() {;}
-
-    public ExamenDiagnostico(String resultados, String muestras, OrdenServicioEntity ordenServicio) {
+    public ExamenDiagnosticoEntity() {
+        
+    }
+    
+    
+    public ExamenDiagnosticoEntity(String resultados, String muestras, OrdenServicioEntity ordenServicio) {
         this.resultados = resultados;
         this.muestras = muestras;
         this.ordenServicio = ordenServicio;
     }
+    
+    
+    public ExamenDiagnosticoEntity(Integer idExamen) {
+        this.idExamen = idExamen;
+    }
+
+    
 
     public Integer getIdExamen() {
         return idExamen;
@@ -67,3 +73,4 @@ public class ExamenDiagnosticoEntity {
                 (ordenServicio != null ? ordenServicio.getIdOrden() : "NULL") + "]";
     }
 }
+
