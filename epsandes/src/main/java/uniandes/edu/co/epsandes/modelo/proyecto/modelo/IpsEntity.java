@@ -1,4 +1,4 @@
-package uniandes.edu.co.epsandes.modelo;
+package uniandes.edu.co.epsandes.modelo.proyecto.modelo;
 
 import jakarta.persistence.*;
 import jakarta.persistence.GeneratedValue;
